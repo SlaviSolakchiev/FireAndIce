@@ -8,7 +8,7 @@
 
     using FireAndIce.Data.Common.Models;
     using FireAndIce.Data.Models;
-
+    using FireAndIce.Data.Seeding;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
 
@@ -105,5 +105,7 @@
                 }
             }
         }
+
+        
     }
 }
