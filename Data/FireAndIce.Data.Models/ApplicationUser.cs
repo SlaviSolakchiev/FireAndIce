@@ -3,7 +3,7 @@ namespace FireAndIce.Data.Models
 {
     using System;
     using System.Collections.Generic;
-
+    using System.ComponentModel.DataAnnotations;
     using FireAndIce.Data.Common.Models;
 
     using Microsoft.AspNetCore.Identity;
