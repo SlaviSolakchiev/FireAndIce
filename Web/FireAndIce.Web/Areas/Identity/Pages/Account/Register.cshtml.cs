@@ -126,7 +126,7 @@ namespace FireAndIce.Web.Areas.Identity.Pages.Account
                 }
                 else
                 {
-                    _logger.LogInformation("User created a new account with password.");
+                    this._logger.LogInformation("User created a new account with password.");
 
                     var userId = await this._userManager.GetUserIdAsync(user);
                     await this._userManager.AddToRoleAsync(user, "Customer");

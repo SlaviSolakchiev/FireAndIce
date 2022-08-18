@@ -26,6 +26,8 @@ namespace FireAndIce.Web
     {
         public static void Main(string[] args)
         {
+            
+
             var builder = WebApplication.CreateBuilder(args);
             var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
 
@@ -40,7 +42,7 @@ namespace FireAndIce.Web
         }
 
         private static void ConfigureServices(IServiceCollection services, IConfiguration configuration)
-        {
+        {   
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
@@ -63,6 +65,8 @@ namespace FireAndIce.Web
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddSingleton(configuration);
+            
+
 
             // Data repositories
             services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
@@ -72,6 +76,10 @@ namespace FireAndIce.Web
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
             services.AddTransient<ISettingsService, SettingsService>();
+            services.AddTransient<IGetAllStatusesService, GetAllStatusesService>();
+            services.AddTransient<ICreateRequestService, CreateRequestService>();
+            services.AddTransient<ICreateImageService, CreateImageService>();
+
         }
 
         private static void Configure(WebApplication app)
@@ -85,6 +93,7 @@ namespace FireAndIce.Web
             }
 
             AutoMapperConfig.RegisterMappings(typeof(ErrorViewModel).GetTypeInfo().Assembly);
+
 
             if (app.Environment.IsDevelopment())
             {
