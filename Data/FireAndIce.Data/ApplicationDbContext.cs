@@ -26,6 +26,12 @@
 
         public DbSet<Setting> Settings { get; set; }
 
+
+        public DbSet<Status> Statuses { get; set; }
+
+        public DbSet<Image> Images { get; set; }
+
+        public DbSet<ServiceRequest> ServiceRequests { get; set; }
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
@@ -106,6 +112,6 @@
             }
         }
 
-        
+
     }
 }
