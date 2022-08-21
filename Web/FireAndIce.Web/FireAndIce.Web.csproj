@@ -47,4 +47,8 @@
     <ProjectReference Include="..\FireAndIce.Web.Infrastructure\FireAndIce.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\FireAndIce.Web.ViewModels\FireAndIce.Web.ViewModels.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\UploadedImages\" />
+  </ItemGroup>
 </Project>
