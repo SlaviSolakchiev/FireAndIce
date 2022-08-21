@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Services\FireAndIce.Services.Mapping\FireAndIce.Services.Mapping.csproj" />
     <ProjectReference Include="..\FireAndIce.Data.Common\FireAndIce.Data.Common.csproj" />
   </ItemGroup>
   
